@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    db1:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/kings?allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=utf8
+      username: root
+      password: mysql
+    db2:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/peace?allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=utf8
+      username: root
+      password: mysql
