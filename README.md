@@ -38,11 +38,20 @@ CREATE TABLE `tb_user` (
  ###### 2.AsyncServiceImpl实现AsyncService,每个方法上添加@Async
  ###### 3.@EnableAsync //开启异步调出
   
-  ## 三、静态代码块执行顺序
-  #### 1.创建包dto
-  ###### 1.Fathers和Sons类进行测试
-  #### 2.结论
+ ## 三、静态代码块执行顺序
+ #### 1.创建包dto
+ ###### 1.Fathers和Sons类进行测试
+ #### 2.结论
   >1.静态代码块的特征，随着类的加载而执行，而且只执行一次<br>
   2.在子类中执行main方法，由于子类继承父类，所以父类中的静态代码块优先执行一次<br>
   3.静态代码块—>非静态代码块—>构造函数(执行顺序[先父后子])<br>
  
+## 四、Spring Boot 扫描处理所有的请求节点
+###### 1.创建拦截包intercept
+###### 2.创建MyStartupRunner实现CommandLineRunner,注解@Component 
+###### 3.重写run方法，执行项目启动的任务
+> 平常开发中有可能需要实现在项目启动后执行的功能，SpringBoot提供的一种简单的实现方案就是添加一个model并实现CommandLineRunner接口，实现功能的代码放在实现的run方法中<br>
+2.如果需要按照一定的顺序去执行，那么就需要在实体类上使用一个@Order注解（或者实现Order接口）来表明顺序<br>
+@Component<br>
+@Order(value=2)<br>
+public class MyStartupRunner1 implements CommandLineRunner{｝<br>

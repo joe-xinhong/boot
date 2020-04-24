@@ -21,7 +21,6 @@ class BootApplicationTests {
 
 	@Test
 	void contextLoads() {
-		//List<String> urls = new ArrayList<String>();
 		RequestMappingHandlerMapping mapping = applicationContext
 				.getBean(RequestMappingHandlerMapping.class);
 		// 获取url与类和方法的对应信息
