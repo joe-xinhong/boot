@@ -16,13 +16,13 @@ import java.util.concurrent.Future;
 */
 @Slf4j
 @RestController
-@RequestMapping(value = "/threading")
+@RequestMapping(value = "/threading",name = "异步任务管理")
 public class AsyncController {
 
     @Autowired
     private AsyncService asyncService;
 
-    @RequestMapping(value="/task",method = RequestMethod.GET)
+    @RequestMapping(value="/task",method = RequestMethod.GET,name = "异步任务")
     public String doTask() throws Exception {
         long start = System.currentTimeMillis();
         Future<String> task1 = asyncService.doTask1();

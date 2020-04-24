@@ -34,11 +34,15 @@ CREATE TABLE `tb_user` (
 >1.使用Spring比使用JDK原生的并发API更简单。（一个注解@Async就搞定）<br>
  2.我们的应用环境一般都会集成Spring，我们的Bean也都交给Spring来进行管理，那么使用Spring来实现多线程更加简单，更加优雅。
  ##### 2. spring boot 如何使用多线程
- >1.Spring中实现多线程，其实非常简单，只需要在配置类中添加@EnableAsync就可以使用多线程。在希望执行的并发方法中使用@Async就可以定义一个线程任务。通过spring给我们提供的ThreadPoolTaskExecutor就可以使用线程池。<br>
- 2.Spring通过任务执行器（TaskExecutor）来实现多线程和并发编程。使用ThreadPoolTaskExecutor可实现一个基于线程池的TaskExecutor。而实际开发中任务一般是非阻碍的，即异步的，所以我们要在配置类中通过@EnableAsync开启对异步任务的支持，并通过在实际执行的Bean的方法中使用@Async注解声明其是一个异步任务。
- ##### 3. 实现
  ###### 1.AsyncService及三个线程方法
  ###### 2.AsyncServiceImpl实现AsyncService,每个方法上添加@Async
  ###### 3.@EnableAsync //开启异步调出
   
+  ## 三、静态代码块执行顺序
+  #### 1.创建包dto
+  ###### 1.Fathers和Sons类进行测试
+  #### 2.结论
+  >1.静态代码块的特征，随着类的加载而执行，而且只执行一次<br>
+  2.在子类中执行main方法，由于子类继承父类，所以父类中的静态代码块优先执行一次<br>
+  3.静态代码块—>非静态代码块—>构造函数(执行顺序[先父后子])<br>
  

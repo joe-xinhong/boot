@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
+@RequestMapping(value = "/user",name = "用户管理")
 public class IndexController {
 
     @Autowired
@@ -19,7 +20,7 @@ public class IndexController {
     @Autowired
     private UsersService usersService;
 
-    @RequestMapping(value = "/addUser",method = RequestMethod.GET)
+    @RequestMapping(value = "/addUser",method = RequestMethod.GET,name = "新增用户")
     public String addUser(){
         TbUser user1 = new TbUser();
         user1.setName("joe");
@@ -30,7 +31,7 @@ public class IndexController {
         return "ok";
     }
 
-    @RequestMapping(value = "/addUsers",method = RequestMethod.GET)
+    @RequestMapping(value = "/addUsers",method = RequestMethod.GET,name = "新增用户s")
     public String addUsers(){
         TbUsers user1 = new TbUsers();
         user1.setName("an");
