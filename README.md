@@ -55,3 +55,13 @@ CREATE TABLE `tb_user` (
 @Component<br>
 @Order(value=2)<br>
 public class MyStartupRunner1 implements CommandLineRunner{｝<br>
+
+## 五、Java创建多线程的8种方式[xiancheng包]
+###### 1.[Demo1]继承Thread类，重写run()方法
+###### 2.[Demo2]实现Runnable接口，重写run()[实现Runnable接口相比第一种继承Thread类的方式，使用了面向接口，将任务与线程进行分离，有利于解耦]
+###### 3.[Demo3]匿名内部类[适用于创建启动线程次数较少的环境，书写更加简便]
+###### 4.[Demo4]实现Callable<T> 接口[含返回值且可抛出异常的线程创建启动方式]
+###### 5.[Demo5]创建启动线程之Timer定时任务
+###### 6.[Demo6]线程池的实现[降低了创建线程和销毁线程时间开销和资源浪费]
+###### 7.[Demo7]Lambda表达式的实现[使用Lambda表达式并行计算]
+###### 8.[AsyncService]Spring实现多线程
